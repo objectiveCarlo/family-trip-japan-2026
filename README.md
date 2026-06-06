@@ -1,6 +1,6 @@
 # 🇯🇵 Japan Trip 2026
 
-Group trip itinerary for 10 pax — **September 26 to October 5, 2026**.
+Group trip itinerary for 9 pax — **September 26 to October 5, 2026**.
 
 Manila → Kamakura → Enoshima → Tokyo → Narita → Manila
 

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japan Trip 2026 — 10 Pax</title>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sand: #F5EDD8;
+      --deep-sand: #E8D9BC;
+      --ocean: #2A6B8A;
+      --ocean-dark: #1A4D66;
+      --ocean-light: #5A9DB8;
+      --seafoam: #7BBFAA;
+      --seafoam-light: #A8D5C5;
+      --coral: #D4725A;
+      --ink: #1C2B35;
+      --ink-light: #3D5060;
+      --wood: #8B6645;
+      --gold: #C9973A;
+      --white-wash: rgba(255,255,255,0.75);
+      --paper: #FDFAF3;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      background-color: var(--sand);
+      color: var(--ink);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 340px;
+      background: linear-gradient(160deg, var(--ocean-dark) 0%, var(--ocean) 45%, var(--ocean-light) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px 70px;
+      overflow: hidden;
+    }
+
+    /* Wave SVG at bottom of hero */
+    .hero-wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+    }
+
+    /* Torii silhouette */
+    .torii {
+      position: absolute;
+      right: 6%;
+      bottom: 60px;
+      opacity: 0.12;
+    }
+
+    /* Sun circle */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,200,80,0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Ripple rings */
+    .ripple {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      animation: ripple 6s infinite;
+      pointer-events: none;
+    }
+    .ripple:nth-child(1) { width: 300px; height: 300px; animation-delay: 0s; }
+    .ripple:nth-child(2) { width: 500px; height: 500px; animation-delay: 2s; }
+    .ripple:nth-child(3) { width: 700px; height: 700px; animation-delay: 4s; }
+    @keyframes ripple {
+      0% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.95); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(1.05); }
+    }
+
+    .hero-tag {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--seafoam-light);
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(36px, 6vw, 62px);
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+      line-height: 1.15;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+
+    .hero-title span {
+      color: var(--seafoam-light);
+    }
+
+    .hero-sub {
+      margin-top: 14px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.05em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-pill {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-label {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ocean);
+      margin-bottom: 18px;
+      margin-top: 52px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--ocean-light), transparent);
+    }
+
+    /* ===== DECISION CARDS ===== */
+    .decisions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .decision-card {
+      background: var(--paper);
+      border-radius: 14px;
+      padding: 18px 20px;
+      border: 1px solid rgba(42,107,138,0.12);
+      box-shadow: 0 2px 16px rgba(26,77,102,0.06);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .decision-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(26,77,102,0.1);
+    }
+    .decision-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      border-radius: 14px 0 0 14px;
+    }
+    .decision-card.urgent::before { background: var(--coral); }
+    .decision-card.medium::before { background: var(--gold); }
+    .decision-card.info::before { background: var(--seafoam); }
+
+    .decision-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .decision-title {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .deadline-badge {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .urgent .deadline-badge { background: #FDE8E3; color: var(--coral); }
+    .medium .deadline-badge { background: #FDF3DC; color: var(--gold); }
+    .info .deadline-badge { background: #E3F2EE; color: var(--seafoam); }
+
+    .decision-note {
+      font-size: 12.5px;
+      color: var(--ink-light);
+      line-height: 1.55;
+    }
+
+    .decision-icon {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    /* ===== ROUTE BAR ===== */
+    .route-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: var(--paper);
+      border-radius: 14px;
+      padding: 14px 20px;
+      border: 1px solid rgba(42,107,138,0.12);
+      box-shadow: 0 2px 16px rgba(26,77,102,0.06);
+    }
+    .route-stop {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .rs-transit { background: #E6F1FB; color: #0C447C; }
+    .rs-kamakura { background: #EAF3DE; color: #27500A; }
+    .rs-enoshima { background: #E3F2EE; color: #085041; }
+    .rs-tokyo { background: #EEEDFE; color: #3C3489; }
+    .route-arrow { color: var(--ocean-light); font-size: 13px; }
+
+    /* ===== ITINERARY TABLE ===== */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(26,77,102,0.1);
+      border: 1px solid rgba(42,107,138,0.12);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      min-width: 620px;
+    }
+
+    thead tr {
+      background: linear-gradient(135deg, var(--ocean-dark), var(--ocean));
+    }
+
+    th {
+      padding: 13px 16px;
+      text-align: left;
+      font-family: 'Shippori Mincho', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.85);
+      text-transform: uppercase;
+    }
+
+    td {
+      padding: 12px 16px;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(42,107,138,0.07);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    tr.data-row:hover td {
+      background: rgba(42,107,138,0.03);
+    }
+
+    .section-row td {
+      background: linear-gradient(to right, rgba(42,107,138,0.08), transparent);
+      font-family: 'Shippori Mincho', serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--ocean-dark);
+      padding: 7px 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .day-num {
+      font-family: 'Shippori Mincho', serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--ocean-dark);
+    }
+    .day-date {
+      font-size: 11px;
+      color: #7A9EAB;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    .loc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .lb-transit { background: #E6F1FB; color: #0C447C; }
+    .lb-kamakura { background: #EAF3DE; color: #27500A; }
+    .lb-enoshima { background: #E3F2EE; color: #085041; }
+    .lb-tokyo { background: #EEEDFE; color: #3C3489; }
+
+    .act { color: var(--ink); font-weight: 500; }
+    .act-note { font-size: 12px; color: var(--ink-light); margin-top: 2px; }
+    .act + .act { margin-top: 5px; }
+
+    .stay-name {
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .stay-pill {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(42,107,138,0.1);
+      color: var(--ocean);
+      margin-top: 4px;
+    }
+    .stay-note {
+      font-size: 11.5px;
+      color: var(--ink-light);
+      margin-top: 3px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 40px 20px 30px;
+      font-size: 12px;
+      color: rgba(28,43,53,0.4);
+      font-family: 'Shippori Mincho', serif;
+      letter-spacing: 0.08em;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-wave {
+      display: block;
+      margin: 0 auto 16px;
+      opacity: 0.2;
+    }
+
+    /* ===== WAVE DECORATION ===== */
+    .wave-divider {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      margin-top: -1px;
+    }
+
+    /* FISH decoration */
+    .fish-row {
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 12px;
+      opacity: 0.25;
+      margin: 8px 0 0;
+    }
+
+    @media (max-width: 600px) {
+      .decisions-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 32px; }
+      th:nth-child(3), td:nth-child(3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="ripple"></div>
+  <div class="ripple"></div>
+  <div class="ripple"></div>
+
+  <!-- Torii silhouette -->
+  <svg class="torii" width="120" height="160" viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="8" y="30" width="10" height="130" fill="white"/>
+    <rect x="102" y="30" width="10" height="130" fill="white"/>
+    <rect x="0" y="20" width="120" height="12" rx="3" fill="white"/>
+    <rect x="-8" y="36" width="136" height="8" rx="2" fill="white"/>
+    <rect x="4" y="44" width="14" height="10" fill="white"/>
+    <rect x="102" y="44" width="14" height="10" fill="white"/>
+  </svg>
+
+  <p class="hero-tag">✦ Group Trip Planning ✦</p>
+  <h1 class="hero-title">Japan <span>2026</span></h1>
+  <p class="hero-sub">September 26 – October 5 &nbsp;·&nbsp; 10 people &nbsp;·&nbsp; Manila → Japan → Manila</p>
+  <div class="hero-pills">
+    <span class="hero-pill">🏯 Kamakura</span>
+    <span class="hero-pill">🏝️ Enoshima</span>
+    <span class="hero-pill">🗼 Tokyo</span>
+    <span class="hero-pill">🎮 PokéPark</span>
+    <span class="hero-pill">✈️ Narita</span>
+  </div>
+
+  <svg class="hero-wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#F5EDD8"/>
+  </svg>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="container">
+
+  <!-- DECISIONS -->
+  <p class="section-label">⚡ Decisions & Deadlines</p>
+
+  <div class="decisions-grid">
+
+    <div class="decision-card urgent">
+      <div class="decision-icon">🏠</div>
+      <div class="decision-header">
+        <div class="decision-title">Kamakura Accommodation</div>
+        <span class="deadline-badge">July 1</span>
+      </div>
+      <div class="decision-note">Decide between Airbnb (whole house, more homey) vs hotel near Kamakura Station. Group of 10 with older guests — consider elevator access and proximity to train.</div>
+    </div>
+
+    <div class="decision-card urgent">
+      <div class="decision-icon">🗼</div>
+      <div class="decision-header">
+        <div class="decision-title">Tokyo Hotel Confirmation</div>
+        <span class="deadline-badge">July 1</span>
+      </div>
+      <div class="decision-note">Leaning toward The Kanzashi Tokyo Asakusa. Confirm rooms for 10 pax (6 nights, Sep 29–Oct 4). Call/email hotel directly to block rooms.</div>
+    </div>
+
+    <div class="decision-card urgent">
+      <div class="decision-icon">🛂</div>
+      <div class="decision-header">
+        <div class="decision-title">Visa — Ate Lyn & Tita Ana</div>
+        <span class="deadline-badge">Apply July</span>
+      </div>
+      <div class="decision-note">Both need to apply for Japan tourist visa in July. Prepare supporting docs: bank statements, ITR, flight & hotel bookings, employment certificate.</div>
+    </div>
+
+    <div class="decision-card medium">
+      <div class="decision-icon">🎮</div>
+      <div class="decision-header">
+        <div class="decision-title">PokéPark KANTO Tickets</div>
+        <span class="deadline-badge">Jul 30 · 5pm PH</span>
+      </div>
+      <div class="decision-note">Tickets drop exactly 2 months before visit date (Sep 30). Release is <strong>July 30 at 6pm JST / 5pm PH time</strong>. Use the international booking site. Sells out in minutes — have card ready!</div>
+    </div>
+
+    <div class="decision-card info">
+      <div class="decision-icon">💳</div>
+      <div class="decision-header">
+        <div class="decision-title">Suica Cards & IC Cards</div>
+        <span class="deadline-badge">No deadline</span>
+      </div>
+      <div class="decision-note">Get Suica (or PASMO) IC cards for all 10 on arrival. Works on trains, buses, and convenience stores across Tokyo and Kamakura. Can load via phone (Apple/Google Pay) or at station kiosks.</div>
+    </div>
+
+  </div>
+
+  <!-- ROUTE -->
+  <p class="section-label">🗺 Trip Route</p>
+  <div class="route-bar">
+    <span class="route-stop rs-transit">✈️ Manila</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop rs-kamakura">🏯 Kamakura</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop rs-enoshima">🏝️ Enoshima</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop rs-tokyo">🗼 Tokyo</span>
+    <span class="route-arrow">→</span>
+    <span class="route-stop rs-transit">✈️ Narita → Manila</span>
+  </div>
+
+  <!-- ITINERARY -->
+  <p class="section-label">📅 Full Itinerary</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:80px">Day</th>
+          <th style="width:120px">Location</th>
+          <th>Activities</th>
+          <th style="width:200px">Stay</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="section-row">
+          <td colspan="4">📍 Kamakura &amp; Enoshima &nbsp;—&nbsp; Sep 26–28</td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 1</div><div class="day-date">Sep 26 Sat</div></td>
+          <td><span class="loc-badge lb-transit">MNL → Kamakura</span></td>
+          <td>
+            <div class="act">✈️ Fly Manila → Narita / Haneda</div>
+            <div class="act-note">Train direct to Kamakura on arrival. Evening stroll along Komachi-dori street.</div>
+          </td>
+          <td>
+            <div class="stay-name">Airbnb — Kamakura</div>
+            <span class="stay-pill">2 nights</span>
+            <div class="stay-note">Look for whole-house near Kamakura Station</div>
+          </td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 2</div><div class="day-date">Sep 27 Sun</div></td>
+          <td><span class="loc-badge lb-kamakura">Kamakura</span></td>
+          <td>
+            <div class="act">🗿 Great Buddha (Kotoku-in)</div>
+            <div class="act">🌊 Hase-dera Temple</div>
+            <div class="act">⛩️ Tsurugaoka Hachimangu Shrine</div>
+            <div class="act-note">Shirasu-don (whitebait rice) for dinner — local specialty</div>
+          </td>
+          <td><div class="stay-note">Same Airbnb</div></td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 3</div><div class="day-date">Sep 28 Mon</div></td>
+          <td><span class="loc-badge lb-enoshima">Enoshima</span></td>
+          <td>
+            <div class="act">🏝️ Enoshima Island day trip</div>
+            <div class="act-note">Benzaiten shrine, paid elevator, sea caves, fresh seafood lunch. Enoden train from Kamakura (~25 min).</div>
+          </td>
+          <td><div class="stay-note">Same Airbnb, back by evening</div></td>
+        </tr>
+
+        <tr class="section-row">
+          <td colspan="4">📍 Tokyo &nbsp;—&nbsp; Sep 29 – Oct 4</td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 4</div><div class="day-date">Sep 29 Tue</div></td>
+          <td><span class="loc-badge lb-transit">Kamakura → Tokyo</span></td>
+          <td>
+            <div class="act">🚃 JR Shonan-Shinjuku Line to Tokyo (~1 hr)</div>
+            <div class="act">⛩️ Harajuku &amp; Meiji Shrine</div>
+            <div class="act-note">Calm shaded grounds — great for older guests. Takeshita St for younger ones. Dinner near Asakusa.</div>
+          </td>
+          <td>
+            <div class="stay-name">The Kanzashi Tokyo Asakusa</div>
+            <span class="stay-pill">6 nights</span>
+            <div class="stay-note">Sep 29 – Oct 4 · Asakusa base</div>
+          </td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 5</div><div class="day-date">Sep 30 Wed</div></td>
+          <td><span class="loc-badge lb-tokyo">Tokyo — PokéPark</span></td>
+          <td>
+            <div class="act">🎮 PokéPark KANTO at Yomiuriland</div>
+            <div class="act-note">Keio Line → Keio-Yomiuriland → gondola (~45 min). Buy tickets Jul 30 at 5pm PH time!</div>
+          </td>
+          <td><div class="stay-note">Same hotel, back by evening</div></td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 6</div><div class="day-date">Oct 1 Thu</div></td>
+          <td><span class="loc-badge lb-tokyo">Tokyo</span></td>
+          <td>
+            <div class="act">🏮 Asakusa &amp; Senso-ji Temple</div>
+            <div class="act">🗼 Tokyo Skytree (optional, book ahead)</div>
+            <div class="act-note">Ueno museums or Akihabara in the afternoon — both very close from Asakusa.</div>
+          </td>
+          <td><div class="stay-note">Same hotel</div></td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 7</div><div class="day-date">Oct 2 Fri</div></td>
+          <td><span class="loc-badge lb-tokyo">Tokyo — free day</span></td>
+          <td>
+            <div class="act">🌆 Shibuya Crossing</div>
+            <div class="act">🛍️ Shopping &amp; pasalubong run</div>
+            <div class="act-note">Shinjuku, Ginza, or Don Quijote. Group dinner — yakiniku or kaiseki.</div>
+          </td>
+          <td><div class="stay-note">Same hotel</div></td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 8</div><div class="day-date">Oct 3 Sat</div></td>
+          <td><span class="loc-badge lb-tokyo">Tokyo — free day</span></td>
+          <td>
+            <div class="act">🗾 Any missed spots / free explore</div>
+            <div class="act-note">TeamLab Planets, Odaiba, Shimokitazawa, or just wander.</div>
+          </td>
+          <td><div class="stay-note">Same hotel</div></td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 9</div><div class="day-date">Oct 4 Sun</div></td>
+          <td><span class="loc-badge lb-tokyo">Tokyo — last day</span></td>
+          <td>
+            <div class="act">🛍️ Last pasalubong run</div>
+            <div class="act">🍽️ Farewell group dinner</div>
+            <div class="act-note">Shinjuku, Ginza, or Don Quijote for final shopping. Go all out on dinner — yakiniku or kaiseki.</div>
+          </td>
+          <td><div class="stay-note">Same hotel, last night</div></td>
+        </tr>
+
+        <tr class="section-row">
+          <td colspan="4">📍 Departure &nbsp;—&nbsp; Oct 5</td>
+        </tr>
+
+        <tr class="data-row">
+          <td><div class="day-num">Day 10</div><div class="day-date">Oct 5 Mon</div></td>
+          <td><span class="loc-badge lb-transit">Tokyo → Narita</span></td>
+          <td>
+            <div class="act">🌅 Morning free — check out</div>
+            <div class="act">🚃 N'EX or Limousine Bus to Narita (~3:30pm)</div>
+            <div class="act">✈️ 5J 5057 departs 7:15pm → Manila 11:35pm</div>
+            <div class="act-note">Leave hotel by 3:30pm. Arrive NRT T2 by 5pm for group check-in. 3 hrs before departure.</div>
+          </td>
+          <td><div class="stay-note">No hotel — fly home 🛫</div></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="fish-row">🐟 ～ 🐚 ～ 🐠 ～ 🐡 ～ 🦀</div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <svg class="footer-wave" width="120" height="20" viewBox="0 0 120 20">
+    <path d="M0,10 C20,20 40,0 60,10 C80,20 100,0 120,10" stroke="#2A6B8A" stroke-width="1.5" fill="none"/>
+  </svg>
+  日本旅行 &nbsp;·&nbsp; September – October 2026 &nbsp;·&nbsp; 10 人
+</div>
+
+</body>
+</html>

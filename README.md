@@ -10,7 +10,7 @@ Manila → Kamakura → Enoshima → Tokyo → Narita → Manila
 
 ## 🌐 View the itinerary
 
-👉 **[Open the trip page](https://your-username.github.io/japan-trip-2026/)**
+👉 **[Open the trip page](https://objectiveCarlo.github.io/family-trip-japan-2026/)**
 
 > Replace `your-username` with your actual GitHub username after deploying.
 

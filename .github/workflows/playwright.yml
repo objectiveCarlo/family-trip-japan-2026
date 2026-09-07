@@ -16,11 +16,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      # No package-lock.json is committed yet, so use `npm install`.
-      # Once a lockfile exists, switch this to `npm ci`.
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci
 
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium

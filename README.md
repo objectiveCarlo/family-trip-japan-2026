@@ -45,9 +45,10 @@ Open it in any text editor. Each `<tr class="data-row" data-day="N">` is one day
 Playwright end-to-end tests live in `tests/`. They need **Node.js** (`brew install node`).
 
 ```sh
+nvm use                           # Node LTS (see .nvmrc)
 npm install                       # first time
 npx playwright install chromium   # first time — grabs the browser
-npm test                          # run the suite
+npm test                          # run the suite (35 tests)
 npm run report                    # open the last HTML report
 ```
 

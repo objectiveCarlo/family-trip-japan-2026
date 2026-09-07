@@ -36,7 +36,22 @@ Manila → Kamakura → Enoshima → Tokyo → Narita → Manila
 
 Everything is in a single file: `index.html`
 
-Open it in any text editor. The itinerary table starts around line 280 — each `<tr class="data-row">` is one day. The decisions section is above it with `.decision-card` blocks.
+Open it in any text editor. Each `<tr class="data-row" data-day="N">` is one day; per-day detail (the click-to-open modal) lives in the `DETAILS` object inside the `<script>` block, and the little SVG stickers are the `ART` object above it.
+
+---
+
+## ✅ Tests
+
+Playwright end-to-end tests live in `tests/`. They need **Node.js** (`brew install node`).
+
+```sh
+npm install                       # first time
+npx playwright install chromium   # first time — grabs the browser
+npm test                          # run the suite
+npm run report                    # open the last HTML report
+```
+
+The config serves `index.html` with `python3 -m http.server` on port 4173, so nothing else needs to be running. CI runs the same suite on every push/PR to `main` (`.github/workflows/playwright.yml`).
 
 ---
 

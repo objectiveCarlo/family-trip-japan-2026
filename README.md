@@ -44,9 +44,10 @@ Open it in any text editor. The itinerary table starts around line 280 — each 
 
 | What | When |
 |------|------|
-| Decide Kamakura accommodation | July 1 |
-| Confirm Tokyo hotel | July 1 |
-| Ate Lyn & Tita Ana visa application | July |
-| PokéPark ticket drop | **Jul 30 · 5pm PH time** |
+| Kamakura Airbnb — Koshigoe | ✅ Booked |
+| Tokyo Airbnb — Horikiri, Katsushika | ✅ Booked |
+| Shibuya Sky sunset slot | **Book ~Sep 18** (14-day window) |
+| Ate Lyn & Tita Ana visa | ✅ Done |
+| PokéPark KANTO tickets — Oct 1 | ✅ Booked |
 | Trip departs | Sep 26 · 6:50am MNL (5J 5054) |
 | Fly home | Oct 5 · 7:15pm NRT (5J 5057) |

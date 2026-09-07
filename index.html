@@ -43,6 +43,9 @@
       z-index: 0;
     }
 
+    a { color: var(--ocean); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--ocean-dark); }
+
     /* ===== HERO ===== */
     .hero {
       position: relative;
@@ -474,40 +477,49 @@
 
   <div class="decisions-grid">
 
-    <div class="decision-card urgent">
+    <div class="decision-card info">
       <div class="decision-icon">🏠</div>
       <div class="decision-header">
-        <div class="decision-title">Kamakura Accommodation</div>
-        <span class="deadline-badge">July 1</span>
+        <div class="decision-title">Kamakura Airbnb — Booked</div>
+        <span class="deadline-badge">Confirmed</span>
       </div>
-      <div class="decision-note">Decide between Airbnb (whole house, more homey) vs hotel near Kamakura Station. Group of 10 with older guests — consider elevator access and proximity to train.</div>
+      <div class="decision-note">Whole house in <strong>Koshigoe 5-chome</strong> (〒248-0033), ~8 min walk from Enoden Koshigoe Station. One stop from Enoshima; ~13 min to Kamakura Station. Coastal — Shichirigahama beach and sunset nearby. <a href="https://www.google.com/maps/search/?api=1&query=35.31049%2C139.49354">Open in Maps</a></div>
     </div>
 
-    <div class="decision-card urgent">
-      <div class="decision-icon">🗼</div>
+    <div class="decision-card info">
+      <div class="decision-icon">🏙️</div>
       <div class="decision-header">
-        <div class="decision-title">Tokyo Hotel Confirmation</div>
-        <span class="deadline-badge">July 1</span>
+        <div class="decision-title">Tokyo Airbnb — Booked</div>
+        <span class="deadline-badge">Confirmed</span>
       </div>
-      <div class="decision-note">Leaning toward The Kanzashi Tokyo Asakusa. Confirm rooms for 10 pax (6 nights, Sep 29–Oct 4). Call/email hotel directly to block rooms.</div>
+      <div class="decision-note"><strong>Horikiri, Katsushika-ku</strong> (〒124-0006), ~3 min walk from Keisei Horikiri-shōbuen Station on the Keisei Main Line. 6 nights, Sep 29 – Oct 4. ~10 min to Nippori (JR Yamanote hub); Keisei Access Express runs straight to Narita from Aoto (1 stop). <a href="https://www.google.com/maps/search/?api=1&query=35.74842554451584%2C139.82645071534424">Open in Maps</a></div>
     </div>
 
-    <div class="decision-card urgent">
+    <div class="decision-card info">
       <div class="decision-icon">🛂</div>
       <div class="decision-header">
         <div class="decision-title">Visa — Ate Lyn & Tita Ana</div>
-        <span class="deadline-badge">Apply July</span>
+        <span class="deadline-badge">✅ Done</span>
       </div>
-      <div class="decision-note">Both need to apply for Japan tourist visa in July. Prepare supporting docs: bank statements, ITR, flight & hotel bookings, employment certificate.</div>
+      <div class="decision-note">Japan tourist visas secured. Carry printed copies of the visa page, flight &amp; accommodation bookings, and this itinerary for immigration.</div>
     </div>
 
-    <div class="decision-card medium">
+    <div class="decision-card info">
       <div class="decision-icon">🎮</div>
       <div class="decision-header">
         <div class="decision-title">PokéPark KANTO Tickets</div>
-        <span class="deadline-badge">Jul 30 · 5pm PH</span>
+        <span class="deadline-badge">✅ Booked</span>
       </div>
-      <div class="decision-note">Tickets drop exactly 2 months before visit date (Sep 30). Release is <strong>July 30 at 6pm JST / 5pm PH time</strong>. Use the international booking site. Sells out in minutes — have card ready!</div>
+      <div class="decision-note">Tickets secured for <strong>Oct 1</strong>. Save the booking QR / confirmation offline and note the entry time slot. Keio Line → Keio-Yomiuriland → gondola.</div>
+    </div>
+
+    <div class="decision-card medium">
+      <div class="decision-icon">🌇</div>
+      <div class="decision-header">
+        <div class="decision-title">Shibuya Sky — Sunset Slot</div>
+        <span class="deadline-badge">Book ~Sep 18</span>
+      </div>
+      <div class="decision-note">Official tickets (shibuya-scramble-square.com) open on a rolling <strong>14-day window</strong> — for the Oct 2 visit that's around <strong>Sep 18</strong>. No fixed release time, so check that morning with payment ready. Sunset slots (15:00+) go first and can sell out within hours. Walk-up draws from the same pool — sold out online means sold out at the door.</div>
     </div>
 
     <div class="decision-card info">
@@ -558,13 +570,13 @@
           <td><div class="day-num">Day 1</div><div class="day-date">Sep 26 Sat</div></td>
           <td><span class="loc-badge lb-transit">MNL → Kamakura</span></td>
           <td>
-            <div class="act">✈️ Fly Manila → Narita / Haneda</div>
-            <div class="act-note">Train direct to Kamakura on arrival. Evening stroll along Komachi-dori street.</div>
+            <div class="act">✈️ Fly Manila → Narita, land 12:25pm (5J 5054)</div>
+            <div class="act-note">To Koshigoe: Narita → JR to Ofuna/Kamakura → Enoden to Koshigoe (~2.5 hrs with luggage). Evening: seafront stroll, or Enoden to Kamakura for Komachi-dori.</div>
           </td>
           <td>
-            <div class="stay-name">Airbnb — Kamakura</div>
-            <span class="stay-pill">2 nights</span>
-            <div class="stay-note">Look for whole-house near Kamakura Station</div>
+            <div class="stay-name">Airbnb — Koshigoe, Kamakura</div>
+            <span class="stay-pill">3 nights</span>
+            <div class="stay-note">Whole house · ~8 min from Enoden Koshigoe Station · <a href="https://www.google.com/maps/search/?api=1&query=35.31049%2C139.49354">Map</a></div>
           </td>
         </tr>
 
@@ -598,55 +610,67 @@
           <td><div class="day-num">Day 4</div><div class="day-date">Sep 29 Tue</div></td>
           <td><span class="loc-badge lb-transit">Kamakura → Tokyo</span></td>
           <td>
-            <div class="act">🚃 JR Shonan-Shinjuku Line to Tokyo (~1 hr)</div>
-            <div class="act">⛩️ Harajuku &amp; Meiji Shrine</div>
-            <div class="act-note">Calm shaded grounds — great for older guests. Takeshita St for younger ones. Dinner near Asakusa.</div>
+            <div class="act">🚃 Enoden to Kamakura, then JR to Tokyo → Keisei to Horikiri-shōbuen (~2 hrs with luggage)</div>
+            <div class="act-note">Route via Nippori, then Keisei Main Line 2 stops. Drop bags, then head out.</div>
+            <div class="act">🏮 Asakusa &amp; Senso-ji Temple</div>
+            <div class="act-note">~20 min via Aoto → Oshiage. Nakamise-dori, then Tokyo Skytree (optional, book ahead).</div>
           </td>
           <td>
-            <div class="stay-name">The Kanzashi Tokyo Asakusa</div>
+            <div class="stay-name">Airbnb — Horikiri, Katsushika</div>
             <span class="stay-pill">6 nights</span>
-            <div class="stay-note">Sep 29 – Oct 4 · Asakusa base</div>
+            <div class="stay-note">Sep 29 – Oct 4 · ~3 min from Keisei Horikiri-shōbuen · <a href="https://www.google.com/maps/search/?api=1&query=35.74842554451584%2C139.82645071534424">Map</a></div>
           </td>
         </tr>
 
         <tr class="data-row">
           <td><div class="day-num">Day 5</div><div class="day-date">Sep 30 Wed</div></td>
-          <td><span class="loc-badge lb-tokyo">Tokyo — PokéPark</span></td>
+          <td><span class="loc-badge lb-tokyo">Tokyo — Harajuku → Ikebukuro</span></td>
           <td>
-            <div class="act">🎮 PokéPark KANTO at Yomiuriland</div>
-            <div class="act-note">Keio Line → Keio-Yomiuriland → gondola (~45 min). Buy tickets Jul 30 at 5pm PH time!</div>
+            <div class="act">⛩️ Start at Meiji Jingu Shrine</div>
+            <div class="act-note">From Horikiri-shōbuen via Nippori → JR Yamanote to Harajuku (~40 min). Calm shaded grounds — great for older guests. Then Takeshita-dori &amp; Omotesando.</div>
+            <div class="act">🐹 Capyneko Cafe — capybara &amp; cat café</div>
+            <div class="act">🐕 Shiba Cafe — shiba inu café</div>
+            <div class="act">🐱 Mofusand Cafe / store</div>
+            <div class="act-note">All in Harajuku. Cafés take reservations and fill up — book ahead.</div>
+            <div class="act">🎡 Ikebukuro — Pokémon Center Mega Tokyo (Sunshine City)</div>
+            <div class="act-note">~10 min from Harajuku on the Yamanote Line, and on the way back toward Nippori/home. Pokémon Café next door (reservation only), Animate flagship, Sunshine City.</div>
           </td>
           <td><div class="stay-note">Same hotel, back by evening</div></td>
         </tr>
 
         <tr class="data-row">
           <td><div class="day-num">Day 6</div><div class="day-date">Oct 1 Thu</div></td>
-          <td><span class="loc-badge lb-tokyo">Tokyo</span></td>
+          <td><span class="loc-badge lb-tokyo">Tokyo — PokéPark</span></td>
           <td>
-            <div class="act">🏮 Asakusa &amp; Senso-ji Temple</div>
-            <div class="act">🗼 Tokyo Skytree (optional, book ahead)</div>
-            <div class="act-note">Ueno museums or Akihabara in the afternoon — both very close from Asakusa.</div>
+            <div class="act">🎮 PokéPark KANTO at Yomiuriland</div>
+            <div class="act-note">Long haul from Horikiri: Nippori → Shinjuku → Keio Line → Keio-Yomiuriland → gondola (~1.5 hrs each way). Leave early; have the booking QR saved offline.</div>
           </td>
-          <td><div class="stay-note">Same hotel</div></td>
+          <td><div class="stay-note">Same hotel, back by evening</div></td>
         </tr>
 
         <tr class="data-row">
           <td><div class="day-num">Day 7</div><div class="day-date">Oct 2 Fri</div></td>
-          <td><span class="loc-badge lb-tokyo">Tokyo — free day</span></td>
+          <td><span class="loc-badge lb-tokyo">Tokyo — Shibuya</span></td>
           <td>
-            <div class="act">🌆 Shibuya Crossing</div>
-            <div class="act">🛍️ Shopping &amp; pasalubong run</div>
-            <div class="act-note">Shinjuku, Ginza, or Don Quijote. Group dinner — yakiniku or kaiseki.</div>
+            <div class="act">🗾 Daytime flex — any missed spots</div>
+            <div class="act-note">Shibuya is ~45 min via Nippori → JR Yamanote. Odaiba or Shimokitazawa (2 stops from Shibuya).</div>
+            <div class="act">🌇 Shibuya Sky at sunset</div>
+            <div class="act-note">Book the sunset slot the day it opens (~Sep 18) — see Decisions above. Shibuya Crossing right below.</div>
+            <div class="act">🍽️ Dinner at Gonpachi Nishiazabu — the "Kill Bill" restaurant</div>
+            <div class="act-note">~15 min from Shibuya. Reserve ahead for a group of 9.</div>
           </td>
           <td><div class="stay-note">Same hotel</div></td>
         </tr>
 
         <tr class="data-row">
           <td><div class="day-num">Day 8</div><div class="day-date">Oct 3 Sat</div></td>
-          <td><span class="loc-badge lb-tokyo">Tokyo — free day</span></td>
+          <td><span class="loc-badge lb-tokyo">Tokyo — Shinjuku</span></td>
           <td>
-            <div class="act">🗾 Any missed spots / free explore</div>
-            <div class="act-note">TeamLab Planets, Odaiba, Shimokitazawa, or just wander.</div>
+            <div class="act">🏙️ Tokyo Metropolitan Gov. Observation Deck (free)</div>
+            <div class="act-note">~35 min via Nippori → JR Yamanote. Easy views, good for older guests. Shinjuku Gyoen nearby if there's time.</div>
+            <div class="act">🛍️ Pasalubong run — Don Quijote &amp; department stores</div>
+            <div class="act">🌃 Group yakiniku dinner — Omoide Yokocho or Kabukicho</div>
+            <div class="act-note">Option: swap the daytime for a Mt. Takao trip — ~50 min from Shinjuku on the Keio Line, cable car up an easy summit trail. Back in time for the Shinjuku evening.</div>
           </td>
           <td><div class="stay-note">Same hotel</div></td>
         </tr>
@@ -671,9 +695,9 @@
           <td><span class="loc-badge lb-transit">Tokyo → Narita</span></td>
           <td>
             <div class="act">🌅 Morning free — check out</div>
-            <div class="act">🚃 N'EX or Limousine Bus to Narita (~3:30pm)</div>
+            <div class="act">🚃 Keisei Main Line: Horikiri-shōbuen → Aoto (1 stop) → Access Express to Narita T2 (~1 hr, ~¥1,300)</div>
             <div class="act">✈️ 5J 5057 departs 7:15pm → Manila 11:35pm</div>
-            <div class="act-note">Leave hotel by 3:30pm. Arrive NRT T2 by 5pm for group check-in. 3 hrs before departure.</div>
+            <div class="act-note">Leave by ~3:30pm to reach NRT T2 by 5pm — 3 hrs before departure. Skyliner is faster but only from Nippori/Ueno.</div>
           </td>
           <td><div class="stay-note">No hotel — fly home 🛫</div></td>
         </tr>

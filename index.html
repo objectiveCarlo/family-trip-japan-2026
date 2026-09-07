@@ -387,6 +387,45 @@
     .decision-note { font-size: 12.5px; color: var(--ink-light); line-height: 1.55; }
     .decision-icon { font-size: 22px; margin-bottom: 10px; }
 
+    /* ===== MUST-EAT LIST ===== */
+    .eats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .eat-card {
+      background: var(--paper);
+      border-radius: 14px;
+      padding: 16px 18px;
+      border: 1px solid rgba(42,107,138,0.12);
+      box-shadow: 0 2px 16px rgba(26,77,102,0.06);
+    }
+    .eat-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .eat-name {
+      font-family: 'Shippori Mincho', serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--ink);
+    }
+    .eat-tag {
+      font-size: 10px;
+      color: var(--ocean);
+      background: rgba(42,107,138,0.09);
+      padding: 3px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .eat-note { font-size: 12.5px; color: var(--ink-light); line-height: 1.55; margin-bottom: 8px; }
+    .eat-card a { font-size: 11px; font-weight: 600; text-decoration: none; }
+    .eat-card a:hover { text-decoration: underline; }
+
     /* ===== DETAIL MODAL ===== */
     .modal-overlay {
       position: fixed;
@@ -542,6 +581,7 @@
 
     @media (max-width: 600px) {
       .decisions-grid { grid-template-columns: 1fr; }
+      .eats-grid { grid-template-columns: 1fr; }
       .hero-title { font-size: 32px; }
       th:nth-child(4), td:nth-child(4) { display: none; }
       .modal-overlay { padding: 0; }
@@ -820,6 +860,62 @@
         <span class="deadline-badge">Confirmed</span>
       </div>
       <div class="decision-note"><strong>Koshigoe, Kamakura</strong> (Enoden, coastal, 3 nts) and <strong>Horikiri, Katsushika</strong> (Keisei Main Line, 6 nts). Full addresses, walk times and map links are in each day's detail view.</div>
+    </div>
+
+  </div>
+
+  <!-- MUST EAT -->
+  <p class="section-label">🍜 Must-Eat List</p>
+  <p class="section-intro">Reliable picks for a group of 9 — mostly chains with real tables. Classic ramen counters only seat a handful, so those mean splitting up. Tap a name for the map.</p>
+
+  <div class="eats-grid">
+
+    <div class="eat-card">
+      <div class="eat-head"><span class="eat-name">Kura Sushi</span><span class="eat-tag">Sushi · chain</span></div>
+      <p class="eat-note">Conveyor-belt sushi, ~¥115 a plate, ordered from the seat-side touchscreen. Every few empty plates drops a capsule-toy prize — kid catnip. Big branches at Asakusa, Shibuya and Ikebukuro.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Kura+Sushi+Asakusa" target="_blank" rel="noopener">Map ↗</a>
+    </div>
+
+    <div class="eat-card">
+      <div class="eat-head"><span class="eat-name">Uobei Shibuya</span><span class="eat-tag">Sushi · Shibuya</span></div>
+      <p class="eat-note">Genki Sushi's tablet-order bar — plates rocket down a rail straight to your seat. Cheap, fast and fun, right by the Day 7 Shibuya evening. Counter only, so the group spreads along the bar.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Uobei+Shibuya+Dogenzaka" target="_blank" rel="noopener">Map ↗</a>
+    </div>
+
+    <div class="eat-card">
+      <div class="eat-head"><span class="eat-name">Ippudo</span><span class="eat-tag">Ramen · chain</span></div>
+      <p class="eat-note">The easy "not Ichiran" tonkotsu pick — proper tables, picture menus, branches everywhere (Ginza, Shinjuku, Roppongi, Ebisu). The one to choose when all 9 want ramen together.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Ippudo+ramen+Tokyo" target="_blank" rel="noopener">Map ↗</a>
+    </div>
+
+    <div class="eat-card">
+      <div class="eat-head"><span class="eat-name">AFURI</span><span class="eat-tag">Ramen · light</span></div>
+      <p class="eat-note">Clear yuzu-salt ramen, much lighter than tonkotsu — good for the older palates. Harajuku (near Day 5), Ebisu and Shinjuku branches; some have tables, some are ticket-machine + counter.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=AFURI+ramen+Harajuku" target="_blank" rel="noopener">Map ↗</a>
+    </div>
+
+    <div class="eat-card">
+      <div class="eat-head"><span class="eat-name">Tonchin</span><span class="eat-tag">Ramen · Ikebukuro</span></div>
+      <p class="eat-note">Rich Tokyo-style tonkotsu a few minutes from the Pokémon Center. Has table seating and handles bigger groups better than most ramen-ya — a fit for the Day 5 area.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Tonchin+Ikebukuro+honten" target="_blank" rel="noopener">Map ↗</a>
+    </div>
+
+    <div class="eat-card">
+      <div class="eat-head"><span class="eat-name">bills Shichirigahama</span><span class="eat-tag">Brunch · Kamakura</span></div>
+      <p class="eat-note">The ricotta-hotcakes-with-an-ocean-view brunch spot, ~10 min from the Koshigoe house. A lazy Day 2 or Day 3 morning — book ahead on weekends, it fills up.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=bills+Shichirigahama" target="_blank" rel="noopener">Map ↗</a>
+    </div>
+
+    <div class="eat-card">
+      <div class="eat-head"><span class="eat-name">CoCo Ichibanya</span><span class="eat-tag">Curry · chain</span></div>
+      <p class="eat-note">Build-your-own Japanese curry — pick the rice size, spice level and toppings. Everywhere, cheap, quick, and the safe bet for picky eaters.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=CoCo+Ichibanya+Tokyo" target="_blank" rel="noopener">Map ↗</a>
+    </div>
+
+    <div class="eat-card">
+      <div class="eat-head"><span class="eat-name">Tsukiji Outer Market</span><span class="eat-tag">Seafood · Tsukiji</span></div>
+      <p class="eat-note">Stand-up seafood breakfast crawl — sushi, grilled scallops, tamagoyaki skewers, uni, dashi-maki. A good early Day 9 morning. Go before ~10am; many stalls wind down by early afternoon.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market" target="_blank" rel="noopener">Map ↗</a>
     </div>
 
   </div>

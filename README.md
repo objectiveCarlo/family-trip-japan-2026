@@ -62,7 +62,6 @@ The config serves `index.html` with `python3 -m http.server` on port 4173, so no
 |------|------|
 | Kamakura Airbnb — Koshigoe | ✅ Booked |
 | Tokyo Airbnb — Horikiri, Katsushika | ✅ Booked |
-| Shibuya Sky sunset slot | **Book ~Sep 18** (14-day window) |
 | Ate Lyn & Tita Ana visa | ✅ Done |
 | PokéPark KANTO tickets — Oct 1 | ✅ Booked |
 | Trip departs | Sep 26 · 6:50am MNL (5J 5054) |

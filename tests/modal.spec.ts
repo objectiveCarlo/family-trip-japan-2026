@@ -73,7 +73,7 @@ test('Enter and Space activate a focused day row', async ({ page }) => {
 
 test('opening a second day replaces the modal contents', async ({ page }) => {
   await page.locator('tr.data-row[data-day="4"]').click();
-  await expect(page.locator('#modalBody h2')).toHaveText('Day 4 — Move to Tokyo + Asakusa');
+  await expect(page.locator('#modalBody h2')).toHaveText('Day 4 — Last Kamakura morning + move to Tokyo');
 
   await page.keyboard.press('Escape');
   await page.locator('tr.data-row[data-day="8"]').click();

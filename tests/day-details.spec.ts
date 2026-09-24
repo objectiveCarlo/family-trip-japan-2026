@@ -7,7 +7,7 @@ const DAY_TITLES: Record<number, string> = {
   4: 'Day 4 — Last Kamakura morning + move to Tokyo',
   5: 'Day 5 — Free day',
   6: 'Day 6 — PokéPark KANTO',
-  7: 'Day 7 — Harajuku cafés + Shibuya & Kill Bill',
+  7: 'Day 7 — Harajuku cafés + Kill Bill',
   8: 'Day 8 — Shinjuku (or Mt Takao)',
   9: 'Day 9 — Buffer & farewell dinner',
   10: 'Day 10 — Fly home',

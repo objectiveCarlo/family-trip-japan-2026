@@ -14,7 +14,7 @@ test('a day opens its detail modal as an accessible dialog', async ({ page }) =>
   await expect(modal).toBeVisible();
   await expect(dialog).toHaveAttribute('role', 'dialog');
   await expect(dialog).toHaveAttribute('aria-modal', 'true');
-  await expect(dialog.locator('h2')).toHaveText('Day 5 — Harajuku cafés + Pokémon Center');
+  await expect(dialog.locator('h2')).toHaveText('Day 5 — Free day');
 });
 
 test('opening locks background scroll and closing restores it', async ({ page }) => {

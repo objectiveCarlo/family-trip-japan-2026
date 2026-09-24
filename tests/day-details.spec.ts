@@ -5,9 +5,9 @@ const DAY_TITLES: Record<number, string> = {
   2: 'Day 2 — Kamakura temples',
   3: 'Day 3 — Enoshima island',
   4: 'Day 4 — Last Kamakura morning + move to Tokyo',
-  5: 'Day 5 — Harajuku cafés + Pokémon Center',
+  5: 'Day 5 — Free day',
   6: 'Day 6 — PokéPark KANTO',
-  7: 'Day 7 — Shibuya & Kill Bill',
+  7: 'Day 7 — Harajuku cafés + Shibuya & Kill Bill',
   8: 'Day 8 — Shinjuku (or Mt Takao)',
   9: 'Day 9 — Buffer & farewell dinner',
   10: 'Day 10 — Fly home',
@@ -58,26 +58,27 @@ test('Day 3 offers the HALE surf lesson with booking details', async ({ page }) 
   await expect(surf.locator('.chip', { hasText: '¥7,700' })).toBeVisible();
 });
 
-test('Day 5 lists the three Harajuku spots and the corrected Pokémon note', async ({ page }) => {
+test('Day 5 lists mofusand and the corrected Pokémon note', async ({ page }) => {
   await page.locator('tr.data-row[data-day="5"]').click();
   const modal = page.locator('#modal');
 
-  for (const name of [
-    'Capyneko Cafe',
-    'Harajuku Mame-Shiba Cafe',
-    'mofusand TOKYO',
-    'Pokémon Center MEGA TOKYO',
-  ]) {
+  for (const name of ['mofusand TOKYO', 'Pokémon Center MEGA TOKYO']) {
     await expect(modal.locator('.place-name', { hasText: name })).toBeVisible();
   }
 
   await expect(modal).toContainText('Pikachu Sweets');
   await expect(modal).toContainText('Nihonbashi');
-  await expect(modal.locator('.chip', { hasText: '¥3,850' })).toBeVisible();
 });
 
-test('Day 7 dinner points at the Nishi-Azabu Gonpachi', async ({ page }) => {
+test('Day 7 opens with Meiji Jingu and the two animal cafés, and dinner points at the Nishi-Azabu Gonpachi', async ({ page }) => {
   await page.locator('tr.data-row[data-day="7"]').click();
+  const modal = page.locator('#modal');
+
+  for (const name of ['Meiji Jingu', 'Capyneko Cafe', 'Harajuku Mame-Shiba Cafe']) {
+    await expect(modal.locator('.place-name', { hasText: name })).toBeVisible();
+  }
+  await expect(modal.locator('.chip', { hasText: '¥3,850' })).toBeVisible();
+
   const gonpachi = page.locator('.place', { hasText: 'Kill Bill restaurant' });
   await expect(gonpachi).toBeVisible();
   await expect(gonpachi).toContainText('Nishi-Azabu');
